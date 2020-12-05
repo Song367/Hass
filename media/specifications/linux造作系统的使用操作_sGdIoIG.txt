@@ -1,0 +1,529 @@
+ls -l 显示当前目录下的文件 以列表表形式显示
+
+ls -h 显示当前目录下的文件大小 以kb形式显示  并且要与 -l 同时使用
+
+ls -a 显示隐藏文件   其中的‘.’表示当前目录  ‘..’表示上一级目录  .file 表示隐藏文件
+a-all
+
+ls -d 查看目录属性  -d要和-l 连用
+
+ls -i 显示文件id
+
+他们之间可连用
+例如 ： ls -lha  ls -lah 等等
+
+ls *.txt   显示以.txt结尾的文件
+ls 1*.txt  显示以1开头.txt 结尾的文件
+
+ls ??.txt  显示名字有两个字符的以.txt结尾的文件 
+
+ls [1234]23.txt  显示第一个字母是[]中的其中一个的文件
+
+ls [a-z]23.txt  显示第一字母是a-z中的其中一个的文件
+
+cd ~ 是返回用户所在的目录，也就是终端最开始的目录
+cd - 在两个目录之间来回转换 
+
+通过touch创建文件  ，mkdir 创建目录
+
+
+touch aa.txt  可以加后缀，可不加
+
+mkdir aa   创建目录
+
+mkdir -p /tmp/name/song   递归创建目录  当name目录不存在时， 就会创建name 并创建 song
+
+通过rm 删除  删除目录时要用  -r 或者 -d
+
+rm test.txt 删除文件
+rm -r aa  删除目录
+
+通过cp 显示复制 mv 实现移动
+
+cp 1.txt aa   复制文件到aa目录下
+cp  1.txt aa/11.txt  复制文件到aa目录下,并且改名为11.txt
+
+cp -r aa bb  复制目录aa到bb 下  复制目录时要加-r
+
+mv 1.txt aa 移动1.txt 到aa目录下
+mv 1.txt aa/11.txt  移动1.txt 到aa目录下 ，并且改名为11.txt
+
+在当前目录移动到当前目录 就是重命名
+
+mv aa bb 移动aa 目录到bb 下
+
+which 查看命令的位置
+which touch     which cd 查看不了因为cd是内置命令
+
+find 文件搜索命令   find  搜索范围  -name  文件名
+
+find /home -name 2.txt   精准查询
+
+find /home -name 1*.txt  模糊查询   当遇到有错时，大概率是因为文件名。文件名假单引号就解决问题了
+
+find /home -iname bb    -iname是不区分大小写
+
+按照大小来搜索
+find /home -size -1    -号代表小于  +代表大于  没有符号则是等于  1单位=512Byte
+
+按照用户名来搜索  
+find /home -user song 
+
+按照时间来访问
+
+find  /home -mmin -5   -mmin是按照文件被修改时间  -amin是按照文件被访问时间   -cmin  按照文件属性更改时间
+
+
+按照文件类型搜索
+
+find Desktop/ -type f          f是搜索文档类型的   d 是搜索文件夹类型的  l 是搜索链接类型的
+
+多个条件搜索
+find Desktop/ -name '1*' -a -name '??.txt'    -a表示and  -o表示or
+
+通过id来搜索   ls -i 显示文件id  ls -li 以列表形式显示，并且显示id
+
+
+find Desktop/ -inum 1065896
+
+locate 文件名  locate搜索速度比find快
+
+
+
+cat 和 more 查看文件内容    more是分页查看   less也可以查看文件内容  还可以向上翻页  而且less还可以查询关键字
+
+cat -n 123.txt   -n 是显示行号，显示空行      -b也显示行号，但不显示空行
+
+head 查看文件前几行  tail 查看文件后几行
+head -n 20 aa.txt  -n 指定行数
+
+
+
+搜索内容 grep     -n 是显示行号  -v反向搜索   ^s是以s开头   d$是以d结尾
+
+grep -n as aa   搜索aa文件中内容包含as的
+
+grep  ^# aa   搜索以#号开头的
+
+grep -v as aa  搜索不包含as 的内容
+
+grep -i abc aa  搜索aa文件中 内容为abc的内容  不区分大小写
+
+echo 打印内容  echo asdasd
+
+
+快速添加内容
+>将需要添加的内容直接覆盖文本中的内容      >>将需要添加的内容追加到原本内容后面
+
+
+
+ | 管道 是将一个命令的输出当做另一个命令的输入
+
+grep -i abc aa.txt | more       该方式就类似于  more (grep -i abc aa.txt)
+
+
+创建软链接  （快捷方式）ln 是link的缩写
+
+ln -s aa.txt asd   给aa.txt 创建一个名叫asd的软链接
+ln aa.txt asd   创建的是硬链接  硬链接就相当于copy一个文件，，但是他可以随主文件更新数据
+
+
+
+用户管里操作
+
+组就是为了分配权限。
+
+id user1  可以查看用户在哪个组，以及附加组
+
+
+用户添加
+sudo useradd user1
+
+useradd -m user2  这是将use2创建到/home目录下
+
+useradd -g groupname user3  这是将user3分在名为groupname的组下
+
+用户密码设置
+sudo passwd user1
+
+用户切换
+su root  
+退出用户就是  ctrl+d  或者exit
+
+用户删除
+userdel user1
+userdel -r user1  删除用户user1并且删除用户的/home目录，以及组
+userdel -f user2  强制删除use2
+
+
+用户组的操作
+groupadd group1     添加group1用户组
+
+groupmod -n groupnew group1   将原group1的名字改为groupnew
+
+groupdel  group1  删除用户组
+
+usermod -g  user2  user1  将user1的初始组修改到user2
+
+usermod -G  user2  user1   将user1的附加组修改为user2
+
+shell 解释器  
+查看系统中的解释器    cat /etc/shells        经常用到的shell有/bin/bash   /bin/sh
+
+chsh     修改使用的shell   ch就是change  sh就是shell
+
+修改使用的shell方法2
+usermod -s /bin/sh user1  
+
+
+
+文件权限
+查看权限 可通过ls -l查看
+其中左边第一列就是权限   例如：drwx------    首先第一个字母代表是文件夹还是二进制文件  d文件夹 -二进制文件  
+后面9个字符   前三个字符值所属用户权限    次三个是所属组权限   后三个是其他用户权限 
+其中三个字符分别代表   r:read       w:write        x:execute执行    -：没有权限   顺序是固定的  rwx
+
+
+修改文件权限
+方法一：
+chmod u=rwx,g=rwx,o=rwx  aa.txt          
+chmod u+x,g-x,o+r  aa.txt        用户加上执行权限，组减去执行权限，其他用户加上读权限
+
+方法二：
+r=4,w=2,x=1
+
+chmod 467 aa.txt     所属用户有read权限 ，组有read,write 权限， 其他用户有所有权限
+
+chmod -R 777 /aa   将aa目录下的所有文件权限都是rwx
+
+chgrp 组名 文件/用户   改变文件或用户的所属组
+
+chown root aa.txt  改变aa.txt的所有者
+
+
+
+
+
+查看帮助信息 man，help
+
+man 命令/配置文件    man ls           在查看信息时可以使用 /-a   就可以查看ls中对应-a 的帮助信息
+
+man services   man查看配置文件信息时，不用加路径
+
+touch --help   查看touch的选项使用  
+--help可以查看所有命令
+
+help cd   查看内置命令
+
+
+
+查看系统登录中的用户who，w（查看的信息更全）   
+
+显示的信息分别是： 登录用户名    登录终端（tty本地终端，pts远程终端）时间  
+
+
+
+
+
+文件解压和压缩命令  
+
+方法一：gz格式
+gzip 文件名  压缩
+gunzip 文件名   解压  
+
+gzip压缩文件是直接将需压缩的文件进行压缩，没有生成新的文件。 gzip不能压缩目录
+
+
+方法二：
+tar  -cvfz  生成的文件名 文件原来的名字   -c 打包 -v 显示详细信息  -f  指定文件名  -z 打包同时压缩
+
+tar -xvf  解压文件名   -x 解压  
+
+方法三：
+zip   生成的文件名 文件原来的名字   
+zip -r  生成的文件名 文件原来的名字     压缩目录
+
+unzip 文件名
+
+
+方法四：bz2格式
+bzip2 -k aa.txt   -k 是保留源文件  自动生成名为  aa.txt.bz2      这个方法相当于 tar -cjf  aa.txt.tar.bz2  aa.txt
+
+bunzip2  -k aa.txt.bz2         等于 tar -xjf aa.txt.tar.bz2       
+
+
+
+网络命令：
+write  用户名   向该用户进行发送信息   ctrl +D 保存结束
+
+wall hello     向所有在线用户发送信息hello    
+
+ping -c 3 192.168.1.1   发送三个包
+
+mail user1   给用户发送邮件   然后用户通过mail来查看  查看时根据输入邮件的id查看对应的内容
+
+last  查看所有用户登录信息
+
+traceroute  www.baidu.com      查看数据包路径记录信息
+
+netstat  显示网络信息
+
+netstat  -tlun  查看本机监听的端口
+netstat -an    查看本机所有的网络连接
+netstat -rn     查看本机路由表
+
+-t  tcp协议    -u  UDP协议    -n显示IP地址和端口号   -r  路由   -l是监听
+
+setup 配置IP地址是永久生效  ifconfig是重启后就不生效
+
+
+挂载 命令    mount   在插入u盘这些时需要挂载
+mount  /dev/sr0  /mnt/cdrom     /dev/sr0 设备文件名 系统默认的    /mnt/cdrom 挂载点
+
+退出挂载
+umount /dev/sr0    如果有错，可能是因为没有退出挂载点
+
+
+
+电脑关机，重启命令
+
+shutdown   [-c|-h|-r]  时间        -c :取消前一个关机命令  -h:关机    -r:重启    时间可以是now,或具体时间  
+
+logout  退出登录命令
+
+
+
+
+Vim 文本修改器
+
+文本命令  这些命令要在esc下就是编辑模式使用，或者还需要：再加命令     
+
+
+插入命令：
+a 在光标所在字符后插入
+A  在光标所在行尾插入
+i 在光标所在字符前插入
+I 在光标所在行行首插入
+o 在光标下插入新行
+O在光标上插入新行
+
+定位命令：
+set nu 设置行号
+set nonu  取消行号
+gg    到第一行
+G   到最后一行
+nG  到第n行
+：n  到第n行
+
+$   移到行尾
+0   移到行首
+
+
+删除命令：
+x 删除光标所在处的字符
+
+dd 伤处光标所在行，ndd删除n行
+
+dG删除光标所在行到文件末尾内容
+
+D 删除光标所在处到行尾内容
+
+删除指定范围的行   600,700d   删除600行到700行
+
+
+复制和剪切:
+yy  复制当前行
+nyy 复制当前行一下的n行
+dd 剪切当前行
+ndd 剪切当前行以下n 行
+p，P 粘贴在当前光标所在行下或行上
+
+
+替换和取消命令
+r   取代光标所在处字符
+R  从光标所在处开始替换字符，esc结束
+u  撤销
+
+%s/old/new/g     全文替换指定字符串   例如  %s/asd/wasd/g
+n1,n2s/old/new/g   指定范围内替换
+
+1,4/^/#/g  1到4行首添加#
+1,4/^#//g   1到4行首#删除
+1,4/^/\/\//g    1到4行首添加//其中\是转移字符
+
+ab myemail  190909@qq.com   当输入myemail并按下回车，就可以显示 190909@qq.com
+
+
+查找命令
+直接输入查找的字符串    n是搜索指定字符串的下一个出现位
+
+
+
+导入文件命令
+r  文件名
+
+r !date   加！可以使用shell命令 并且显示在文本中
+
+
+map命令
+map 定义快捷键
+map ^p I#<ESC>    ^P 意思是按ctrl+p实现快捷键  ，^p是按ctrl+v+p生成的，不是打出来的字符
+I是回到行首插入#  最后返回esc编辑模式
+
+
+
+
+rpm安装
+rpm -ivh 包名   i：安装   v :显示详细信息  h显示进度
+rpm安装有依赖关系，树形依赖，环形依赖，模块依赖 。 模块依赖可以通过www.rpmfind.net
+
+
+删除包
+rpm -e  包名  
+
+rpm查询
+
+查询包是否安装  -q查询
+rpm-q 包名
+rpm -qa  查询所有安装的包
+rpm -qi  查看包信息  -i
+
+rpm -qip 查看未安装包的信息  -p
+
+rpm -ql 查看包安装的目录
+
+rpm -qf 文件名  查询文件名是属于哪个包
+
+rpm -qRp  包名  查询包的依赖性 -R  -p 未安装的包
+
+包的校验和提取
+rpm -V 已安装的包名   -V：校验包是否被修改
+
+文件提取    最主要用于修复删错的文件
+rpm2cpio 包名  | cpio -idv .文件绝对路径   
+rpm2cpio   将rpm包转换为icpo格式的命令
+cpio  是一个标准工具，它用于创建软件档案文件和档案文件中提取文件
+
+
+yum命令
+
+
+yum list   显示所有可用软件包
+
+yum search 包名    显示与包名相关的包
+
+yum -y install 包名   安装包   -y是自动丁回复yes
+
+yum -y update 包名   升级包
+
+yum -y remove  包名   卸载包
+ 
+yum grouplist  流出所有可用的软件组
+
+yum groupinstall 软件组名     //安装指定组
+
+yum groupremove  软件组名     //卸载软件组
+
+
+
+
+源码包和rpm包区别
+
+rpm包安装位置是默认的
+rpm包执行服务时就需要  service httpd start
+
+
+源码包安装的位置，自己指定，一般安装到/usr/local/目录下
+源码包执行服务时需要，用绝对路径  例如：/usr/local/apache/bin/apachect1  start 
+
+
+源码包安装教程
+源码包保存位置：/usr/local/src/ 
+
+1.上传到linux:
+通过winscp 传输
+
+2.用tar 命令解压
+
+3。进入解压目录
+
+4.  ./configure --prefix=/usr/local/apache2   安装目录
+
+5.   make  编译
+当make出现错误时，make clear  清除文件
+
+6.   make   编译安装 
+
+
+
+配置文件
+
+用户信息文件
+/etc/passwd          其中每行有七个字段，由：分割
+第一个字段：用户名     第二个字段：x代表密码 用户密码是存放在/etc/shadow 
+第三个字段：UID 用户id   如果等于0就是超级用户 1-499是系统用户/伪用户  500-65535  是普通用户   第四个字段：GID 组id
+第五个字段：用户说明信息   第六个字段：家目录  普通用户:/home/用户名/  root:/root/
+第七个字段：登录后的shell命令解释器   
+
+
+/etc/shadow  影子文件    有9个字段
+shadow文件权限 是000
+
+时间戳字段16666 意思是离1970年1月1日16666天  
+换算时间戳   date -d "1970-01-01 16666 days"
+
+
+/etc/group   组信息文件   四个字段
+第一个字段：组名  第二个字段：组密码标志    
+第三个字段：GID        第四个字段：组的附加用户
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

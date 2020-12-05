@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <style>
+        {#*{margin: 0;padding: 0}#}
+        .mainbox{width: 400px;margin: 100px auto;background-color: rgba(0,0,0,0.6);border-radius: 15px;}
+        form{text-align: center}
+        {#.in_first{margin-top: 20px;}#}
+        .in_first{margin-top: 10px;width: 120px;height: 40px;margin-left: 140px;display: block;!important;border-radius: 5px;border:2px solid #ccc}
+        .in_second{margin-top: 10px;width: 120px;height: 40px;margin-left: 140px;display: block;border-radius: 5px;border:2px solid #ccc}
+        .in_third{margin-top: 10px;width: 80px;height: 40px;margin-left: 160px;display: block;border-radius: 5px;background-color: chartreuse;border:2px solid #ccc;}
+
+    </style>
+</head>
+<body>
+    {{ error }}
+    <div class="mainbox">
+        <form method="post" action="/login/">
+            <tr ><th><label for="id_name">Name:</label></th><td><input class="in_first" type="text" name="name" maxlength="32" required id="id_name" placeholder="用户名"></td></tr>
+            <tr ><th><label for="id_password">Password:</label></th><td><input class="in_second" type="text" name="password" maxlength="32" required id="id_password" placeholder="密码"></td></tr>
+            <input class="in_third" type="submit" value="提交">
+        </form>
+    </div>
+
+</body>
+<script>
+
+</script>
+</html>

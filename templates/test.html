@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hass首页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            width: 100%;
+            height: 40px;
+            background-color: #cccccc;
+        }
+
+        .firstli {
+            display: inline-block;
+            list-style: none;
+            float: left;
+            margin-left: 80px;
+            line-height: 40px;
+        }
+
+        .secondli {
+            display: inline-block;
+            list-style: none;
+            float: right;
+            margin-right: 80px;
+            line-height: 40px;
+        }
+
+        .left {
+            width: 9%;
+            float: left;
+            border-right: 2px solid #ccc;
+        }
+
+        .apply_right {
+            width: 90%;
+            float: right;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #tree1 {
+            margin-left: 80px;
+            margin-top: 100px;
+            font-size: 20px;
+        }
+
+        #tree1 a {
+            font-size: 15px;
+        }
+
+        #tree2 {
+            margin-left: 80px;
+            margin-top: 40px;
+            font-size: 20px;
+        }
+
+        #tree2 a {
+            font-size: 15px;
+        }
+
+        .basic_info {
+            display: inline-block;
+        }
+
+        .big_cat {
+            margin-left: 20px;
+            float: left;
+            margin-top: 40px;
+        }
+
+        .mid_cat {
+            margin-left: 40px;
+            float: left;
+            margin-top: 40px;
+        }
+
+        .small_cat {
+            margin-left: 40px;
+            float: left;
+            margin-top: 40px;
+        }
+
+        .small_cat input {
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+        }
+
+        .site {
+            margin-left: 40px;
+            margin-top: 40px;
+            float: left;
+        }
+
+        .price {
+            margin-left: 40px;
+            margin-top: 40px;
+            float: left;
+        }
+
+        .price input {
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+        }
+
+        select {
+            width: 200px;
+            height: 40px;
+        }
+        .resident{
+            margin-left: 40px;
+            margin-top: 40px;
+            float: left;
+        }
+        .Department{
+            margin-left: 40px;
+            margin-top: 40px;
+            float: left;
+        }
+        .Department input{
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+        }
+        .LocalPeople{
+            margin-left: 40px;
+            margin-top: 40px;
+            float: left;
+        }
+        .LocalPeople input{
+            display: inline-block;
+            width: 160px;
+            height: 40px;
+            background-color: antiquewhite;
+
+            text-align: center;
+        }
+
+
+        .additional_info {
+            display: block;
+            margin-top: 100px;
+        }
+
+        .align_item {
+            margin-left: 40px;
+            float: left;
+            margin-top: 40px;
+        }
+
+        .align_item input {
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+        }
+
+        .maintain_item {
+            margin-left: 800px;
+            float: left;
+            margin-top: 40px;
+        }
+
+        .maintain_item input {
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+        }
+
+        .up_image {
+            margin-left: 200px;
+            float: left;
+            margin-top: 40px;
+        }
+
+        .up_image input {
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+        }
+
+        .Datasheet {
+            margin-left: 40px;
+            float: left;
+            margin-top: 40px;
+        }
+
+        .Datasheet input {
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+        }
+
+        .Drawing {
+            margin-left: 40px;
+            float: left;
+            margin-top: 40px;
+        }
+
+        .Drawing input {
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+        }
+
+        .Manaul {
+            margin-left: 40px;
+            float: left;
+            margin-top: 40px;
+        }
+
+        .Manaul input {
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+        }
+
+        .commit {
+            display: block;
+            width: 200px;
+            margin: 200px auto;
+        }
+
+        .commit input {
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            background-color: cornflowerblue
+        }
+
+        .apply_status_right {
+            width: 90%;
+            float: right;
+            display: none;
+        }
+
+        th {
+            width: 240px;
+            border: 2px solid #cccccc
+        }
+
+        td {
+            text-align: center;
+            border: 2px solid #cccccc
+        }
+        .Asset_number{
+            margin-left: 40px;
+            margin-top: 40px;
+            float: left;
+        }
+        .Asset_number input{
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+        }
+        .A_S{
+            margin-left: 40px;
+            margin-top: 40px;
+            float: left;
+        }
+        .A_S input{
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+        }
+        .Supplier{
+            margin-left: 40px;
+            margin-top: 40px;
+            float: left;
+        }
+        .Supplier input{
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+        }
+        .Manufacturer{
+            margin-left: 40px;
+            margin-top: 40px;
+            float: left;
+        }
+        .Manufacturer input{
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+        }
+        .Place_Origin{
+            margin-left: 40px;
+            margin-top: 40px;
+            float: left;
+        }
+        .Place_Origin input{
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+        }
+        .S_N{
+            margin-left: 40px;
+            margin-top: 40px;
+            float: left;
+        }
+        .S_N input{
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+        }
+
+        .apply_decision_right{width: 90%;float: right;display: none;}
+        .Formal_com_apply{width: 90%;float: right;display: none;}
+        .Formal_status_apply{width: 90%;float: right;display: none;}
+        .Formal_decision_apply{width: 90%;float: right;display: none}
+
+
+
+    </style>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/jquery.treeview.js"></script>
+</head>
+<body>
+
+
+<div class="header">
+    <ul>
+        <li class="firstli">{{ name }}</li>
+        <li class="secondli"><a href="/logout/">登出</a></li>
+    </ul>
+</div>
+<div class="left">
+    <ul id="tree1">
+        <li>
+            <span>临时登录</span>
+            <ul>
+                <li id="Tem_apply"><a href="javascript:;">提交申请</a></li>
+                <li id="Tem_status"><a href="javascript:;">申请状态</a></li>
+                <li id="Tem_decision"><a href="javascript:;">决裁</a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul id="tree2">
+        <li>
+            <span>正式登录</span>
+            <ul>
+                <li id="For_apply"><a href="javascript:;">提交申请</a></li>
+                <li id="For_status"><a href="javascript:;">申请状态</a></li>
+                <li id="For_decision"><a href="javascript:;">决裁</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<!-- 临时登录  提交申请 -->
+
+<div class="apply_right">
+    <form method="post" enctype="multipart/form-data" action="/info/">
+        <div class="basic_info">
+            <div class="big_cat">
+                <label>大分类</label>
+                <select name="big_cats">
+                    <option>请选择</option>
+                    <option>汽车零件</option>
+                    <option>汽车工具</option>
+                </select>
+            </div>
+            <div class="mid_cat">
+                <label>中分类</label>
+                <select name="mid_cats">
+                    <option>请选择</option>
+                    <option>汽车引擎</option>
+                    <option>汽车底盘</option>
+                    <option>汽车油箱</option>
+                </select>
+            </div>
+            <div class="small_cat">
+                <label>小分类</label>
+                <input type="text" name="small_category" placeholder="请填写小分类名称">
+            </div>
+            <div class="site">
+                <label>位置</label>
+                <select name="sites">
+                    <option>请选择</option>
+                    <option>2楼201室</option>
+                    <option>4楼412室</option>
+                    <option>5楼511室</option>
+                    <option>2楼211室</option>
+                </select>
+            </div>
+            <div class="price">
+                <label>采购价</label>
+                <input type="text" name="prices" placeholder="0.0">
+            </div>
+            <br>
+            <div class="resident">
+                <label>担当驻在员</label>
+                <select name="residents">
+                    <option>admin</option>
+
+                </select>
+            </div>
+            <div class="Department">
+                <label>部门</label>
+                <input type="text" name="department" value="depart1">
+            </div>
+            <div class="LocalPeople">
+                <label>担当/现地员</label>
+                <input type="text" name="localpeople" value="admin" readonly="readonly">
+            </div>
+
+        </div>
+        <div class="additional_info">
+            <div class="align_item">
+                <label>校准特殊事项</label>
+                <input type="text" name="align_items">
+            </div>
+            <div class="maintain_item">
+                <label>大保养注意事项</label>
+                <input type="text" name="maintain_items">
+            </div>
+            <br>
+            <div class="up_image">
+                <label>上传图片</label>
+                <input type="file" name="image" placeholder="添加文件">
+            </div>
+            <div class="Datasheet">
+                <label>规格书</label>
+                <input type="file" name="datasheet" placeholder="添加文件">
+            </div>
+            <div class="Drawing">
+                <label>图纸</label>
+                <input type="file" name="drawings" placeholder="添加文件">
+            </div>
+            <div class="Manaul">
+                <label>操作手册</label>
+                <input type="file" name="operation_manaul" placeholder="添加文件">
+            </div>
+        </div>
+        <br>
+        <div class="commit">
+            <input type="submit" placeholder="提交">
+        </div>
+    </form>
+</div>
+
+
+<!--临时登录 申请状态栏-->
+
+<div class="apply_status_right">
+    <div class="basic_info">
+        <div class="big_cat">
+            <label>大分类</label>
+            <select id="bs1">
+                <option>请选择</option>
+                <option>汽车零件</option>
+                <option>汽车工具</option>
+            </select>
+        </div>
+        <div class="mid_cat">
+            <label>中分类</label>
+            <select id="bs2">
+                <option>请选择</option>
+                <option>汽车引擎</option>
+                <option>汽车底盘</option>
+                <option>汽车油箱</option>
+            </select>
+        </div>
+        <div class="small_cat">
+            <label>小分类</label>
+            <input id="bs3" type="text" name="small_category" placeholder="请填写小分类名称">
+        </div>
+        <div class="site">
+            <label>位置</label>
+            <select id="bs4">
+                <option>请选择</option>
+                <option>2楼201室</option>
+                <option>4楼412室</option>
+                <option>5楼511室</option>
+                <option>2楼211室</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <button id="tem_query1" style="width: 80px;height: 40px;margin:120px 400px;display: block;background-color: #cccccc">查询</button>
+    <table>
+        <thead>
+        <th>编号</th>
+        <th>大分类</th>
+        <th>中分类</th>
+        <th>小分类</th>
+        <th>位置</th>
+        <th>申请状态</th>
+        <th>申请时间</th>
+
+        </thead>
+        <tbody id="Tem_sub">
+        <tr>
+            <td>101</td>
+            <td>汽车零件</td>
+            <td>汽车引擎</td>
+            <td>电瓶</td>
+            <td>5#412</td>
+            <td>申请中</td>
+            <td>2020.7.31/08:00</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!--临时登录 决裁 -->
+<div class="apply_decision_right">
+    <div class="basic_info">
+        <div class="big_cat">
+            <label>大分类</label>
+            <select id="dt1">
+                <option>请选择</option>
+                <option>汽车零件</option>
+                <option>汽车工具</option>
+            </select>
+        </div>
+        <div class="mid_cat">
+            <label>中分类</label>
+            <select id="dt2">
+                <option>请选择</option>
+                <option>汽车引擎</option>
+                <option>汽车底盘</option>
+                <option>汽车油箱</option>
+            </select>
+        </div>
+        <div class="small_cat">
+            <label>小分类</label>
+            <input id="dt3" type="text" name="small_category" placeholder="请填写小分类名称">
+        </div>
+        <div class="site">
+            <label>位置</label>
+            <select id="dt4">
+                <option>请选择</option>
+                <option>2楼201室</option>
+                <option>4楼412室</option>
+                <option>5楼511室</option>
+                <option>2楼211室</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <button id="tem_query2" style="width: 80px;height: 40px;margin:120px 400px;display: block;background-color: #cccccc">查询</button>
+    <button style="width: 80px;height: 40px;margin-top:20px;background-color: greenyellow;font-size: 15px;" id="pass">通过</button>
+    <button style="width: 80px;height: 40px;margin-top:20px;background-color: darkred;font-size: 15px;" id="back">驳回</button>
+
+    <table>
+        <thead>
+
+        <th>通过或驳回</th>
+        <th>编号</th>
+        <th>大分类</th>
+        <th>中分类</th>
+        <th>小分类</th>
+        <th>位置</th>
+        <th>担当/现地员</th>
+        <th>决裁状态</th>
+        <th>申请状态</th>
+        <th>申请时间</th>
+        <th>正式登录</th>
+
+        </thead>
+        <tbody id="Tem_de">
+        <tr>
+            <td><input type="checkbox" name="select"></td>
+            <td>101</td>
+            <td>汽车零件</td>
+            <td>汽车引擎</td>
+            <td>电瓶</td>
+            <td>5#412</td>
+            <td>录入员</td>
+            <td>待决裁</td>
+            <td>申请中</td>
+            <td>2020.7.31/08:00</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!--正式登录 提交申请-->
+<div class="Formal_com_apply">
+    <form method="post" enctype="multipart/form-data" action="/De_Formal/">
+        <div class="basic_info">
+            <div class="big_cat">
+                <label>大分类</label>
+                <select name="big_cats">
+                    <option id="b_cat" readonly>请选择</option>
+
+                </select>
+            </div>
+            <div class="mid_cat">
+                <label>中分类</label>
+                <select name="mid_cats">
+                    <option id="m_cat" readonly="readonly">请选择</option>
+
+                </select>
+            </div>
+            <div class="small_cat">
+                <label>小分类</label>
+                <input id="s_cat" type="text" name="small_category" placeholder="请填写小分类名称" readonly>
+            </div>
+            <div class="site">
+                <label>位置</label>
+                <select name="sites">
+                    <option id="asite" readonly>请选择</option>
+                </select>
+            </div>
+            <div class="price">
+                <label>采购价</label>
+                <input id="price_formal" type="text" name="prices" placeholder="0.0" readonly>
+            </div>
+            <br>
+            <div class="resident">
+                <label>担当驻在员</label>
+                <select name="residents">
+                    <option>admin</option>
+
+                </select>
+            </div>
+            <div class="Department">
+                <label>部门</label>
+                <input type="text" name="department" value="depart1">
+            </div>
+            <div class="LocalPeople">
+                <label>担当/现地员</label>
+                <input type="text" name="localpeople" value="admin" readonly="readonly">
+            </div>
+            <div class="Asset_number">
+                <label>资产编号</label>
+                <input type="text"  name="asset_number" >
+            </div>
+            <div class="S_N">
+                <label>S/N码</label>
+                <input type="text" name="s_n">
+            </div>
+            <div class="Supplier">
+                <label>供应商联系方式</label>
+                <input type="text" name="supplier">
+            </div>
+            <div class="Manufacturer">
+                <label>制造商联系方式</label>
+                <input type="text" name="manufacturer">
+            </div>
+            <div class="A_S">
+                <label>A_S商联系方式</label>
+                <input type="text" name="a_s">
+            </div>
+            <div class="Place_Origin">
+                <label>原产地</label>
+                <input type="text" name="place_origin">
+            </div>
+
+
+        </div>
+        <div class="additional_info">
+            <div class="align_item">
+                <label>特殊事项</label>
+                <input type="text" name="special">
+            </div>
+
+            <br>
+            <div class="up_image">
+                <label>确认书</label>
+                <input type="file" name="confirmation" placeholder="添加文件">
+            </div>
+            <input type="text" value="" name="idd" style="display: none">
+        </div>
+        <br>
+        <div class="commit">
+            <input type="submit" placeholder="提交" name="Formal_sub">
+        </div>
+    </form>
+
+</div>
+
+
+<!--正式登录 申请状态-->
+<div class="Formal_status_apply">
+    <div class="basic_info">
+        <div class="big_cat">
+            <label>大分类</label>
+            <select id="fs1">
+                <option>请选择</option>
+                <option>汽车零件</option>
+                <option>汽车工具</option>
+            </select>
+        </div>
+        <div class="mid_cat">
+            <label>中分类</label>
+            <select id="fs2">
+                <option>请选择</option>
+                <option>汽车引擎</option>
+                <option>汽车底盘</option>
+                <option>汽车油箱</option>
+            </select>
+        </div>
+        <div class="small_cat">
+            <label>小分类</label>
+            <input id="fs3" type="text" name="small_category" placeholder="请填写小分类名称">
+        </div>
+        <div class="site">
+            <label>位置</label>
+            <select id="fs4">
+                <option>请选择</option>
+                <option>2楼201室</option>
+                <option>4楼412室</option>
+                <option>5楼511室</option>
+                <option>2楼211室</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <button id="for_query1" style="width: 80px;height: 40px;margin:120px 400px;display: block;background-color: #cccccc">查询</button>
+    <table>
+        <thead>
+        <th>编号</th>
+        <th>大分类</th>
+        <th>中分类</th>
+        <th>小分类</th>
+        <th>位置</th>
+        <th>申请状态</th>
+        <th>申请时间</th>
+
+        </thead>
+        <tbody id="For_sub">
+        <tr>
+            <td>101</td>
+            <td>汽车零件</td>
+            <td>汽车引擎</td>
+            <td>电瓶</td>
+            <td>5#412</td>
+            <td>申请中</td>
+            <td>2020.7.31/08:00</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!--正式登录 决裁-->
+<div class="Formal_decision_apply">
+    <div class="basic_info">
+        <div class="big_cat">
+            <label>大分类</label>
+            <select id="ft1">
+                <option>请选择</option>
+                <option>汽车零件</option>
+                <option>汽车工具</option>
+            </select>
+        </div>
+        <div class="mid_cat">
+            <label>中分类</label>
+            <select id="ft2">
+                <option>请选择</option>
+                <option>汽车引擎</option>
+                <option>汽车底盘</option>
+                <option>汽车油箱</option>
+            </select>
+        </div>
+        <div class="small_cat">
+            <label>小分类</label>
+            <input id="ft3" type="text" name="small_category" placeholder="请填写小分类名称">
+        </div>
+        <div class="site">
+            <label>位置</label>
+            <select id="ft4">
+                <option>请选择</option>
+                <option>2楼201室</option>
+                <option>4楼412室</option>
+                <option>5楼511室</option>
+                <option>2楼211室</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <button id="for_query2" style="width: 80px;height: 40px;margin:120px 400px;display: block;background-color: #cccccc">查询</button>
+    <button id="pass2" style="width: 80px;height: 40px;margin-top:20px;background-color: greenyellow;font-size: 15px;">通过</button>
+    <button id="back2" style="width: 80px;height: 40px;margin-top:20px;background-color: darkred;font-size: 15px;">驳回</button>
+
+    <table>
+        <thead>
+
+        <th>通过或驳回</th>
+        <th>编号</th>
+        <th>大分类</th>
+        <th>中分类</th>
+        <th>小分类</th>
+        <th>位置</th>
+        <th>担当/现地员</th>
+        <th>决裁状态</th>
+        <th>申请状态</th>
+        <th>申请时间</th>
+
+        </thead>
+        <tbody id="For_de">
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>101</td>
+            <td>汽车零件</td>
+            <td>汽车引擎</td>
+            <td>电瓶</td>
+            <td>5#412</td>
+            <td>录入员</td>
+            <th>待决裁</th>
+            <td>申请中</td>
+            <td>2020.7.31/08:00</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+</body>
+<script>
+    $("#tree1").treeview({
+        animated: 'fast',
+        collapsed: false,
+        unique: false,
+    });
+    $("#tree2").treeview({
+        animated: 'fast',
+        collapsed: true,
+        unique: false,
+    });
+    $('#Tem_apply').click(function () {
+        console.log(1);
+        $('.apply_status_right')[0].style.display='none';
+        $('.apply_decision_right')[0].style.display='none';
+        $('.Formal_com_apply')[0].style.display='none';
+        $('.Formal_status_apply')[0].style.display='none';
+        $('.Formal_decision_apply')[0].style.display='none';
+        $('.apply_right')[0].style.display='block';
+    });
+    $('#Tem_status').click(function () {
+        $('.apply_status_right')[0].style.display='block';
+        $('.apply_decision_right')[0].style.display='none';
+        $('.Formal_com_apply')[0].style.display='none';
+        $('.Formal_status_apply')[0].style.display='none';
+        $('.Formal_decision_apply')[0].style.display='none';
+        $('.apply_right')[0].style.display='none';
+    });
+    $('#Tem_decision').click(function () {
+        $('.apply_status_right')[0].style.display='none';
+        $('.apply_decision_right')[0].style.display='block';
+        $('.Formal_com_apply')[0].style.display='none';
+        $('.Formal_status_apply')[0].style.display='none';
+        $('.Formal_decision_apply')[0].style.display='none';
+        $('.apply_right')[0].style.display='none';
+    });
+    $('#For_apply').click(function () {
+        $('.apply_status_right')[0].style.display='none';
+        $('.apply_decision_right')[0].style.display='none';
+        $('.Formal_com_apply')[0].style.display='block';
+        $('.Formal_status_apply')[0].style.display='none';
+        $('.Formal_decision_apply')[0].style.display='none';
+        $('.apply_right')[0].style.display='none';
+    });
+    $('#For_status').click(function () {
+        $('.apply_status_right')[0].style.display='none';
+        $('.apply_decision_right')[0].style.display='none';
+        $('.Formal_com_apply')[0].style.display='none';
+        $('.Formal_status_apply')[0].style.display='block';
+        $('.Formal_decision_apply')[0].style.display='none';
+        $('.apply_right')[0].style.display='none';
+    });
+    $('#For_decision').click(function () {
+        $('.apply_status_right')[0].style.display='none';
+        $('.apply_decision_right')[0].style.display='none';
+        $('.Formal_com_apply')[0].style.display='none';
+        $('.Formal_status_apply')[0].style.display='none';
+        $('.Formal_decision_apply')[0].style.display='block';
+        $('.apply_right')[0].style.display='none';
+    });
+
+
+    $.ajax({
+        url:'/tran_tem/',
+        method:'POST',
+        success:function (data) {
+            console.log(data);
+            data=data['data'];
+            var Tem_sub_res='';   //临时登录，申请阶段
+            var Tem_de_res='';    //临时登录,决裁阶段
+            for(var i=0;i<data.length;i++){
+                if(data[i].status===1){
+                    data[i].status='申请中';
+                }
+                if(data[i].status===2){
+                    data[i].status='进行中';
+                }
+                if(data[i].status===3){
+                    data[i].status='完结';
+                }
+                if(data[i].status===4){
+                    data[i].status='驳回';
+                }
+                if(data[i].state===0){
+                    data[i].state='未决裁';
+                }
+                else if(data[i].state===1){
+                    data[i].state='通过';
+                }
+                else if(data[i].state===2){
+                    data[i].state='驳回';
+                }
+
+                Tem_sub_res+='<tr>\n' +
+                    '            <td>'+data[i]["id"]+'</td>\n' +
+                    '            <td>'+data[i]["big_category"]+'</td>\n' +
+                    '            <td>'+data[i]["mid_category"]+'</td>\n' +
+                    '            <td>'+data[i]["small_category"]+'</td>\n' +
+                    '            <td>'+data[i]["site"]+'</td>\n' +
+                    '            <td>'+data[i]["status"]+'</td>\n' +
+                    '            <td>'+data[i]["log_time"]+'</td>\n' +
+
+                    '        </tr>';
+                Tem_de_res +='<tr>\n' +
+                    '            <td><input type="checkbox" name="select" value="'+data[i]["id"]+'"></td>\n' +
+                    '            <td>'+data[i]["id"]+'</td>\n' +
+                    '            <td>'+data[i]["big_category"]+'</td>\n' +
+                    '            <td>'+data[i]["mid_category"]+'</td>\n' +
+                    '            <td>'+data[i]["small_category"]+'</td>\n' +
+                    '            <td>'+data[i]["site"]+'</td>\n' +
+                    '            <td>'+data[i]["LocalPeople"]+'</td>\n' +
+                    '            <th>'+data[i].state+'</th>\n' +
+                    '            <td>'+data[i].status+'</td>\n' +
+                    '            <td>'+data[i]["up_datetime"]+'</td>\n' +
+                    '<td><button id="'+"bn"+i+'">进入正式登录<button></td>' +
+                    '        </tr>'
+            }
+
+            $('#Tem_sub').html(Tem_sub_res);
+            $('#Tem_de').html(Tem_de_res);
+
+            $('#tem_query1').on('click',function () {
+                var big=$('#bs1').val();
+                var mid=$('#bs2').val();
+                var small=$('#bs3').val();
+                var site=$('#bs4').val();
+                console.log(big,mid,small,site);
+                var Tem_sub_res='';
+                var Tem_de_res='';
+                if(big!=='请选择' || mid!=='请选择' ||small !=='' || site!=='请选择'){
+                    for(var i=0;i<data.length;i++){
+                        if(data[i]['big_category']===big && data[i]['mid_category']===mid && data[i]['small_category'] ){
+                            Tem_sub_res += '\'<tr>\\n\' +\n' +
+                                '                    \'            <td>'+data[i]["id"]+'</td>\\n\' +\n' +
+                                '                    \'            <td>'+data[i]["big_category"]+'</td>\\n\' +\n' +
+                                '                    \'            <td>'+data[i]["mid_category"]+'</td>\\n\' +\n' +
+                                '                    \'            <td>'+data[i]["small_category"]+'</td>\\n\' +\n' +
+                                '                    \'            <td>'+data[i]["site"]+'</td>\\n\' +\n' +
+                                '                    \'            <td>'+data[i]["status"]+'</td>\\n\' +\n' +
+                                '                    \'            <td>'+data[i]["log_time"]+'</td>\\n\' +\n' +
+                                '\n' +
+                                '                    \'        </tr>\';';
+                        }
+
+                    }
+                    $('#Tem_sub').html(Tem_sub_res);
+                }
+                else {
+                    for(var i=0;i<data.length;i++){
+
+                            Tem_sub_res += '\'<tr>\\n\' +\n' +
+                                '                    \'            <td>'+data[i]["id"]+'</td>\\n\' +\n' +
+                                '                    \'            <td>'+data[i]["big_category"]+'</td>\\n\' +\n' +
+                                '                    \'            <td>'+data[i]["mid_category"]+'</td>\\n\' +\n' +
+                                '                    \'            <td>'+data[i]["small_category"]+'</td>\\n\' +\n' +
+                                '                    \'            <td>'+data[i]["site"]+'</td>\\n\' +\n' +
+                                '                    \'            <td>'+data[i]["status"]+'</td>\\n\' +\n' +
+                                '                    \'            <td>'+data[i]["log_time"]+'</td>\\n\' +\n' +
+                                '\n' +
+                                '                    \'        </tr>\';';
+                        }
+
+
+                    }
+                    $('#Tem_sub').html(Tem_sub_res);
+
+
+
+            });
+            $('#tem_query2').on('click',function () {
+                var big=$('#dt1').val();
+                var mid=$('#dt2').val();
+                var small=$('#dt3').val();
+                var site=$('#dt4').val();
+                console.log(big,mid,small,site);
+                var Tem_sub_res='';
+                var Tem_de_res='';
+                if(big!=='请选择' || mid!=='请选择' ||small !=='' || site!=='请选择'){
+                    for(var i=0;i<data.length;i++){
+                        if(data[i]['big_category']===big && data[i]['mid_category']===mid && data[i]['small_category'] ){
+                            Tem_de_res += '<tr>\n' +
+                    '            <td><input type="checkbox" name="select" value="'+data[i]["id"]+'"></td>\n' +
+                    '            <td>'+data[i]["id"]+'</td>\n' +
+                    '            <td>'+data[i]["big_category"]+'</td>\n' +
+                    '            <td>'+data[i]["mid_category"]+'</td>\n' +
+                    '            <td>'+data[i]["small_category"]+'</td>\n' +
+                    '            <td>'+data[i]["site"]+'</td>\n' +
+                    '            <td>'+data[i]["LocalPeople"]+'</td>\n' +
+                    '            <th>'+data[i].state+'</th>\n' +
+                    '            <td>'+data[i].status+'</td>\n' +
+                    '            <td>'+data[i]["up_datetime"]+'</td>\n' +
+                    '<td><button id="'+"bn"+i+'">进入正式登录<button></td>' +
+                    '        </tr>'
+                        }
+
+                    }
+                    $('#Tem_de').html(Tem_de_res);
+                }
+                else {
+                    for(var i=0;i<data.length;i++){
+
+                            Tem_de_res += '<tr>\n' +
+                    '            <td><input type="checkbox" name="select" value="'+data[i]["id"]+'"></td>\n' +
+                    '            <td>'+data[i]["id"]+'</td>\n' +
+                    '            <td>'+data[i]["big_category"]+'</td>\n' +
+                    '            <td>'+data[i]["mid_category"]+'</td>\n' +
+                    '            <td>'+data[i]["small_category"]+'</td>\n' +
+                    '            <td>'+data[i]["site"]+'</td>\n' +
+                    '            <td>'+data[i]["LocalPeople"]+'</td>\n' +
+                    '            <th>'+data[i].state+'</th>\n' +
+                    '            <td>'+data[i].status+'</td>\n' +
+                    '            <td>'+data[i]["up_datetime"]+'</td>\n' +
+                    '<td><button id="'+"bn"+i+'">进入正式登录<button></td>' +
+                    '        </tr>'
+                        }
+
+
+                    }
+                    $('#Tem_de').html(Tem_de_res);
+            });
+
+
+            //点击通过时
+            $('#pass').on('click',function () {
+                var val=[];
+                for(var i=0;i<data.length;i++){
+                    if($('[name=select]')[i].checked===true){
+                        val.push($('[name=select]')[i].value);
+
+                    }
+
+                }
+                console.log(val);
+                $.ajax({
+                    url:'/Tem_decisions/',
+                    method:'POST',
+                    data:{ids:val},
+                    traditional:true,
+                    success:function (Data) {
+                        console.log(Data);
+                    }
+                })
+
+            });
+            $('#back').on('click',function () {
+                var val=[];
+                for(var i=0;i<data.length;i++){
+                    if($('[name=select]')[i].checked===true){
+                        val.push($('[name=select]')[i].value);
+
+                    }
+
+                }
+                console.log(val);
+                $.ajax({
+                    url:'/refuse/',
+                    method:'POST',
+                    data:{ids:val},
+                    traditional:true,
+                    success:function (Data) {
+                        console.log(Data);
+                    }
+                })
+
+            });
+
+            $('#Tem_de button').click(function () {
+                //console.log($(this).prop('id'));
+                var ids=$(this).prop('id').substr(2);   //获取该点击数据的索引
+                console.log(data[ids]['id']);
+                console.log(data[ids]['state']);
+                var id=data[ids]['id'];
+                var datas=data[ids];
+                if(data[ids]['state']==='通过') {
+
+                    $('[name=idd]').val(id);
+                    $('#b_cat').html(datas['big_category']);
+                    $('#m_cat').html(datas['mid_category']);
+                    $('#s_cat').val(datas['small_category']);
+                    $('#asite').html(datas['site']);
+                    $('#price_formal').val(datas['price']);
+                    $('[name=Formal_sub]').attr('disabled',false);
+                }
+                else {
+                    alert('未通过不能进行正式登录');
+                }
+
+            });
+
+            if($('#b_cat').val()==='请选择'){
+                    $('[name=Formal_sub]').attr('disabled',true);
+            }
+
+
+
+        }
+    });
+
+
+
+    //正式登录 数据交互
+    $.ajax({
+        url:'/tran_Formal/',
+        method:'POST',
+        success:function (data) {
+            console.log(data);
+            var state=data['state'];
+            var status=data['status_sc'];
+            data=data['FormalData'];
+
+            console.log(state);
+            var For_sub_res='';   //正式登录，申请阶段
+            var For_de_res='';    //正式登录，决裁
+            for(var i=0;i<data.length;i++){
+                if(data[i][0]){
+                if(status[data[i][0]["id"]]===1){
+                    status[data[i][0]["id"]]='申请中';
+                }
+                if(status[data[i][0]["id"]]===2){
+                    status[data[i][0]["id"]]='进行中';
+                }
+                if(status[data[i][0]["id"]]===3){
+                    status[data[i][0]["id"]]='完结';
+                }
+                if(status[data[i][0]["id"]]===4){
+                    status[data[i][0]["id"]]='驳回';
+                }
+                if(state[data[i][0]["id"]]===0){
+                    state[data[i][0]["id"]]='未决裁';
+                }
+                else if(state[data[i][0]["id"]]===1){
+                    state[data[i][0]["id"]]='通过';
+                }
+                else if(state[data[i][0]["id"]]===2){
+                    state[data[i][0]["id"]]='驳回';
+                }
+                
+                For_sub_res +='<tr>\n' +
+                    '            <td>'+data[i][0]["id"]+'</td>\n' +
+                    '            <td>'+data[i][0]["big_category"]+'</td>\n' +
+                    '            <td>'+data[i][0]["mid_category"]+'</td>\n' +
+                    '            <td>'+data[i][0]["small_category"]+'</td>\n' +
+                    '            <td>'+data[i][0]["site"]+'</td>\n' +
+                    '            <td>'+status[data[i][0]["id"]]+'</td>\n' +
+                    '            <td>'+data[i][0]["log_time"]+'</td>\n' +
+
+                    '        </tr>';
+                For_de_res +='<tr>\n' +
+                    '            <td><input type="checkbox" name="selects" value="'+data[i][0]["id"]+'"></td>\n' +
+                    '            <td>'+data[i][0]["id"]+'</td>\n' +
+                    '            <td>'+data[i][0]["big_category"]+'</td>\n' +
+                    '            <td>'+data[i][0]["mid_category"]+'</td>\n' +
+                    '            <td>'+data[i][0]["small_category"]+'</td>\n' +
+                    '            <td>'+data[i][0]["site"]+'</td>\n' +
+                    '            <td>'+data[i][0]["LocalPeople"]+'</td>\n' +
+                    '            <th>'+state[data[i][0]["id"]]+'</th>\n' +
+                    '            <td>'+status[data[i][0]["id"]]+'</td>\n' +
+                    '            <td>'+data[i][0]["up_datetime"]+'</td>\n' +
+                    '        </tr>';
+            }
+            }
+            $('#For_sub').html(For_sub_res);
+            $('#For_de').html(For_de_res);
+
+            $('#for_query1').on('click',function () {
+                var big=$('#fs1').val();
+                var mid=$('#fs2').val();
+                var small=$('#fs3').val();
+                var site=$('#fs4').val();
+                console.log(big,mid,small,site);
+                var for_sub_res='';
+                var for_de_res='';
+                if(big!=='请选择' || mid!=='请选择' ||small !=='' || site!=='请选择'){
+                    for(var i=0;i<data.length;i++){
+                        if(data[i]['big_category']===big && data[i]['mid_category']===mid && data[i]['small_category'] ){
+                            for_sub_res += '<tr>\n' +
+                    '            <td>'+data[i]["id"]+'</td>\n' +
+                    '            <td>'+data[i]["big_category"]+'</td>\n' +
+                    '            <td>'+data[i]["mid_category"]+'</td>\n' +
+                    '            <td>'+data[i]["small_category"]+'</td>\n' +
+                    '            <td>'+data[i]["site"]+'</td>\n' +
+                    '            <td>'+status[data[i]["id"]]+'</td>\n' +
+                    '            <td>'+data[i]["log_time"]+'</td>\n' +
+                    '        </tr>';
+                        }
+
+                    }
+                    $('#For_sub').html(for_sub_res);
+                }
+                else {
+                    for(var i=0;i<data.length;i++){
+
+                            for_sub_res += '<tr>\n' +
+                    '            <td>'+data[i]["id"]+'</td>\n' +
+                    '            <td>'+data[i]["big_category"]+'</td>\n' +
+                    '            <td>'+data[i]["mid_category"]+'</td>\n' +
+                    '            <td>'+data[i]["small_category"]+'</td>\n' +
+                    '            <td>'+data[i]["site"]+'</td>\n' +
+                    '            <td>'+status[data[i]["id"]]+'</td>\n' +
+                    '            <td>'+data[i]["log_time"]+'</td>\n' +
+                    '        </tr>';
+                        }
+
+
+                    }
+                    $('#For_sub').html(for_sub_res);
+
+
+            });
+
+            $('#for_query2').on('click',function () {
+                var big=$('#ft1').val();
+                var mid=$('#ft2').val();
+                var small=$('#ft3').val();
+                var site=$('#ft4').val();
+                console.log(big,mid,small,site);
+                var for_sub_res='';
+                var for_de_res='';
+                if(big!=='请选择' || mid!=='请选择' ||small !=='' || site!=='请选择'){
+                    for(var i=0;i<data.length;i++){
+                        if(data[i]['big_category']===big && data[i]['mid_category']===mid && data[i]['small_category'] ){
+                            for_de_res += '<tr>\n' +
+                    '            <td><input type="checkbox" name="selects" value="'+data[i]["id"]+'"></td>\n' +
+                    '            <td>'+data[i]["id"]+'</td>\n' +
+                    '            <td>'+data[i]["big_category"]+'</td>\n' +
+                    '            <td>'+data[i]["mid_category"]+'</td>\n' +
+                    '            <td>'+data[i]["small_category"]+'</td>\n' +
+                    '            <td>'+data[i]["site"]+'</td>\n' +
+                    '            <td>'+data[i]["LocalPeople"]+'</td>\n' +
+                    '            <th>'+state[data[i]["id"]]+'</th>\n' +
+                    '            <td>'+status[data[i]["id"]]+'</td>\n' +
+                    '            <td>'+data[i]["up_datetime"]+'</td>\n' +
+                    '        </tr>';
+                        }
+
+                    }
+                    $('#For_de').html(for_de_res);
+                }
+                else {
+                    for(var i=0;i<data.length;i++){
+
+                            for_de_res += '<tr>\n' +
+                    '            <td><input type="checkbox" name="selects" value="'+data[i]["id"]+'"></td>\n' +
+                    '            <td>'+data[i]["id"]+'</td>\n' +
+                    '            <td>'+data[i]["big_category"]+'</td>\n' +
+                    '            <td>'+data[i]["mid_category"]+'</td>\n' +
+                    '            <td>'+data[i]["small_category"]+'</td>\n' +
+                    '            <td>'+data[i]["site"]+'</td>\n' +
+                    '            <td>'+data[i]["LocalPeople"]+'</td>\n' +
+                    '            <th>'+state[data[i]["id"]]+'</th>\n' +
+                    '            <td>'+status[data[i]["id"]]+'</td>\n' +
+                    '            <td>'+data[i]["up_datetime"]+'</td>\n' +
+                    '        </tr>';
+
+
+                    }
+                    $('#For_de').html(for_de_res);
+                }
+
+            });
+
+
+
+
+
+
+
+            //点击通过时
+            $('#pass2').on('click',function () {
+                var vals=[];
+                for(var i=0;i<data.length;i++){
+                    if($('[name=selects]')[i].checked===true){
+                        //console.log($('[name=selects]')[i].value)
+                        vals.push($('[name=selects]')[i].value);
+
+                    }
+
+                }
+                console.log(vals);
+                $.ajax({
+                    url:'/For_decisions/',
+                    method:'POST',
+                    data:{ids:vals},
+                    traditional:true,
+                    success:function (Data) {
+                        if (Data['status']===1){
+                            alert('该项目已完成正式登录');
+                        }
+                    }
+                })
+
+            });
+            $('#back2').on('click',function () {
+                var vals=[];
+                for(var i=0;i<data.length;i++){
+                    if($('[name=selects]')[i].checked===true){
+                        vals.push($('[name=selects]')[i].value);
+
+                    }
+
+                }
+                console.log(vals);
+                $.ajax({
+                    url:'/For_refuse/',
+                    method:'POST',
+                    data:{ids:vals},
+                    traditional:true,
+                    success:function (Data) {
+                        console.log(Data);
+                    }
+                })
+
+            });
+
+
+        }
+    })
+
+
+
+
+</script>
+</html>
